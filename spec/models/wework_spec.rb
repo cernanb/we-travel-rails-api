@@ -6,4 +6,9 @@ RSpec.describe Wework do
     it { should validate_presence_of(:city) }
     it { should validate_presence_of(:country) }
   end
+
+  context "Associations" do
+    it { should have_many(:users) }
+    it { should have_many(:visits) }
+  end
 end
