@@ -14,4 +14,17 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:address_state) }
     it { should validate_presence_of(:address_country) }
   end
+
+  describe "instance methods" do
+    context "check_in_to_wework" do
+      it "creates a visit for the user" do
+        user = create(:user)
+        wework = create(:wework)
+
+        user.check_in_to_wework(wework)
+
+        expect(user.visits.last.wework_id).to eq(wework.id) 
+      end
+    end
+  end
 end

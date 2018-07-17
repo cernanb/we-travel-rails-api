@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   has_many :visits
   has_many :weworks, through: :visits
+
+  def check_in_to_wework(wework)
+    self.visits.create(wework: wework)
+  end
 end
