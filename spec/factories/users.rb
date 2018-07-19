@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :user do
     first_name "Cernan"
     last_name "Bernardo"
+    email "cernanb@gmail.com"
     password_digest "dsadadsadsadsadasdasd"
     address_street "1672 Puffin Pl"
     address_city "San Diego"
